@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainEditorForm</class>
+ <widget class="QMainWindow" name="mainEditorForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>mainEditorForm</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>60</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Select Transport</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="cmbTransport">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>80</y>
+      <width>151</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Car</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Bus</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Train</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Walking</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>120</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Select Distance</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="cmbDistance">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>140</y>
+      <width>79</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>5km</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>10km</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>50km</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>180</y>
+      <width>131</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Select Avg Speed</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="cmbSpeed">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>200</y>
+      <width>79</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>5km/hr</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>30km/hr</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>60km/hr</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>120km/hr</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>240</y>
+      <width>211</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>What will you compare</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chbPrice">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>260</y>
+      <width>85</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Price</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chbEnergy">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>280</y>
+      <width>201</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Energy Consumption per km</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chbConversions">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>300</y>
+      <width>201</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Energy Conversions</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnGen">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>180</y>
+      <width>161</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Generate Comparison</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblShow">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>350</y>
+      <width>561</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Hello</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+    </property>
+   </widget>
+  </widget>
+  <action name="actionSave_As">
+   <property name="text">
+    <string>Save As</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>triggered()</signal>
+   <receiver>mainEditorForm</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cmbTransport</sender>
+   <signal>activated(QString)</signal>
+   <receiver>mainEditorForm</receiver>
+   <slot>transportSelect()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>91</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cmbDistance</sender>
+   <signal>activated(QString)</signal>
+   <receiver>mainEditorForm</receiver>
+   <slot>distanceSelect()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>109</x>
+     <y>151</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cmbSpeed</sender>
+   <signal>activated(QString)</signal>
+   <receiver>mainEditorForm</receiver>
+   <slot>speedSelect()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>109</x>
+     <y>211</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chbPrice</sender>
+   <signal>clicked()</signal>
+   <receiver>mainEditorForm</receiver>
+   <slot>priceCheck()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>112</x>
+     <y>270</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chbConversions</sender>
+   <signal>clicked()</signal>
+   <receiver>mainEditorForm</receiver>
+   <slot>EnergyConverCheck()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>170</x>
+     <y>310</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chbEnergy</sender>
+   <signal>clicked()</signal>
+   <receiver>mainEditorForm</receiver>
+   <slot>EnergyConsumpCheck()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>170</x>
+     <y>290</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnGen</sender>
+   <signal>clicked()</signal>
+   <receiver>mainEditorForm</receiver>
+   <slot>generateCompare()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>360</x>
+     <y>191</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>transportSelect()</slot>
+  <slot>distanceSelect()</slot>
+  <slot>speedSelect()</slot>
+  <slot>priceCheck()</slot>
+  <slot>EnergyConsumpCheck()</slot>
+  <slot>EnergyConverCheck()</slot>
+  <slot>generateCompare()</slot>
+ </slots>
+</ui>
