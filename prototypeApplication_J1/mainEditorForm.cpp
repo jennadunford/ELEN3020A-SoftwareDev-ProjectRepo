@@ -8,7 +8,6 @@ mainEditorForm::mainEditorForm(QDialog *parent)
 : QDialog(parent), ui(new Ui::mainEditorForm)
 {
     ui->setupUi(this);
-    qTransport = "This is a test: Car";
     
     cTransport = Ui_mainEditorForm().cmbTransport;
     cDistance = Ui_mainEditorForm().cmbDistance;
