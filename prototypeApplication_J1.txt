@@ -1,0 +1,20 @@
+****ABOUT PROTOTYPE APPLICATION J1****
+
+This contains a netbeans project containing:
+- Basic UI for the project created in QT Designer
+- Basic C++ functions for the project
+- Project is a QT C++ Application 
+- Runs in netbeans 13 with most recent QT designer
+
+You should be able to open the project in netbeans if you have QT Designer and netbeans installed properly
+with the appropriate C/C++ plugins.
+
+For now this will be worked on to try and get a basic prototype working in C, will possibly try and
+translate the code into python at a later stage
+
+Right now the prototype only accepts user inputs and outputs the selected inputs.
+
+Need to check database compatability with project.
+
+***Jenna ***
+***17 May 2022***
