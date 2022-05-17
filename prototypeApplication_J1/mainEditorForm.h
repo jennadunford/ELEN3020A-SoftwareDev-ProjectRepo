@@ -9,17 +9,17 @@
 #include <QLabel>
 #include <QCheckBox>
 
-//This is the class set up for the UI form
-//The public variable is the actual form itself
+//This is the class set up for the UI form -J
+//The public variable is the actual form itself -J
 class mainEditorForm : public QDialog{
     Q_OBJECT
 public:
     mainEditorForm(QDialog *parent = 0);
     ~mainEditorForm();
-//The private variables are the variables used in the functions
-    //And the functions themselves are declared in private slots
-    //These slots correspond to the slots in qt designer
-    //These variables and functions are accessed in the .cpp file for the main editor form
+//The private variables are the variables used in the functions -J
+    //And the functions themselves are declared in private slots -J
+    //These slots correspond to the slots in qt designer -J
+    //These variables and functions are accessed in the .cpp file for the main editor form - J
 private:
     Ui::mainEditorForm *ui;
     QString qTransport, qDistance, qSpeed, qOutputText;

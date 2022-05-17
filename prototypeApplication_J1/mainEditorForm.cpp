@@ -23,7 +23,7 @@ mainEditorForm::mainEditorForm(QDialog *parent)
     //Bottom 3 lines initiate initial strings for the variable selections -J
     qTransport = "Car";
     qDistance = "5km";
-    qSpeed = "5km/hr";
+    qSpeed = "5km/hr"
     
     connect(ui->btnGen, SIGNAL(clicked()), this ,SLOT(generateCompare())); //This connects the ui to the button, and responds when the button is clicked -J
     
