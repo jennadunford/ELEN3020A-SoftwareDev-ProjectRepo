@@ -37,7 +37,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = prototypeApplication_J11.0.0
-DISTDIR = /home/yeshria/ELEN3020A-SoftwareDev-ProjectRepo/prototypeApplication_J1/build/Debug/GNU-Linux/prototypeApplication_J11.0.0
+DISTDIR = /home/jennadunford/ELEN3020A-SoftwareDev-ProjectRepo/prototypeApplication_J1/build/Debug/GNU-Linux/prototypeApplication_J11.0.0
 LINK          = g++
 LFLAGS        = 
 LIBS          = $(SUBLIBS) /usr/lib/x86_64-linux-gnu/libQt5Widgets.so /usr/lib/x86_64-linux-gnu/libQt5Gui.so /usr/lib/x86_64-linux-gnu/libQt5Core.so /usr/lib/x86_64-linux-gnu/libGL.so -lpthread   
@@ -352,7 +352,7 @@ moc_mainEditorForm.cpp: mainEditorForm.h \
 		ui_mainEditorForm.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/yeshria/ELEN3020A-SoftwareDev-ProjectRepo/prototypeApplication_J1/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yeshria/ELEN3020A-SoftwareDev-ProjectRepo/prototypeApplication_J1/nbproject -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include mainEditorForm.h -o moc_mainEditorForm.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/jennadunford/ELEN3020A-SoftwareDev-ProjectRepo/prototypeApplication_J1/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/jennadunford/ELEN3020A-SoftwareDev-ProjectRepo/prototypeApplication_J1/nbproject -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include mainEditorForm.h -o moc_mainEditorForm.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
