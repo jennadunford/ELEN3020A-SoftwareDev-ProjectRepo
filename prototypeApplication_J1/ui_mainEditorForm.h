@@ -75,7 +75,7 @@ public:
         cmbSpeed->setGeometry(QRect(50, 210, 79, 23));
         lblShow = new QLabel(mainEditorForm);
         lblShow->setObjectName(QString::fromUtf8("lblShow"));
-        lblShow->setGeometry(QRect(50, 440, 481, 181));
+        lblShow->setGeometry(QRect(50, 440, 721, 181));
         lblShow->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
         chbPrice = new QCheckBox(mainEditorForm);
         chbPrice->setObjectName(QString::fromUtf8("chbPrice"));
@@ -89,14 +89,16 @@ public:
         btnGen = new QPushButton(mainEditorForm);
         btnGen->setObjectName(QString::fromUtf8("btnGen"));
         btnGen->setGeometry(QRect(340, 130, 211, 41));
+        btnGen->setStyleSheet(QString::fromUtf8("\n"
+"font: 11pt \"DejaVu Math TeX Gyre\";"));
 
         retranslateUi(mainEditorForm);
         QObject::connect(cmbTransport, SIGNAL(activated(QString)), mainEditorForm, SLOT(transportSelect()));
         QObject::connect(cmbDistance, SIGNAL(activated(QString)), mainEditorForm, SLOT(distanceSelect()));
         QObject::connect(cmbSpeed, SIGNAL(activated(QString)), mainEditorForm, SLOT(speedSelect()));
-        QObject::connect(chbPrice, SIGNAL(clicked(bool)), mainEditorForm, SLOT(priceCheck()));
-        QObject::connect(chbEnergy, SIGNAL(clicked(bool)), mainEditorForm, SLOT(EnergyConsumptionCheck()));
-        QObject::connect(chbConversions, SIGNAL(clicked(bool)), mainEditorForm, SLOT(EnergyConverCheck()));
+        QObject::connect(chbPrice, SIGNAL(clicked()), mainEditorForm, SLOT(priceCheck()));
+        QObject::connect(chbEnergy, SIGNAL(clicked()), mainEditorForm, SLOT(EnergyConsumptionCheck()));
+        QObject::connect(chbConversions, SIGNAL(clicked()), mainEditorForm, SLOT(EnergyConverCheck()));
         QObject::connect(btnGen, SIGNAL(clicked()), mainEditorForm, SLOT(generateCompare()));
 
         QMetaObject::connectSlotsByName(mainEditorForm);

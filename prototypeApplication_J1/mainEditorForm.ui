@@ -160,7 +160,7 @@
     <rect>
      <x>50</x>
      <y>440</y>
-     <width>481</width>
+     <width>721</width>
      <height>181</height>
     </rect>
    </property>
@@ -219,6 +219,10 @@
      <height>41</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">
+font: 11pt &quot;DejaVu Math TeX Gyre&quot;;</string>
+   </property>
    <property name="text">
     <string>Generate Comparison</string>
    </property>
@@ -276,7 +280,7 @@
   </connection>
   <connection>
    <sender>chbPrice</sender>
-   <signal>clicked(bool)</signal>
+   <signal>clicked()</signal>
    <receiver>mainEditorForm</receiver>
    <slot>priceCheck()</slot>
    <hints>
@@ -292,7 +296,7 @@
   </connection>
   <connection>
    <sender>chbEnergy</sender>
-   <signal>clicked(bool)</signal>
+   <signal>clicked()</signal>
    <receiver>mainEditorForm</receiver>
    <slot>EnergyConsumptionCheck()</slot>
    <hints>
@@ -308,7 +312,7 @@
   </connection>
   <connection>
    <sender>chbConversions</sender>
-   <signal>clicked(bool)</signal>
+   <signal>clicked()</signal>
    <receiver>mainEditorForm</receiver>
    <slot>EnergyConverCheck()</slot>
    <hints>
