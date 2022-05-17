@@ -70,6 +70,7 @@ public:
         cmbSpeed->addItem(QString());
         cmbSpeed->addItem(QString());
         cmbSpeed->addItem(QString());
+        cmbSpeed->addItem(QString());
         cmbSpeed->setObjectName(QString::fromUtf8("cmbSpeed"));
         cmbSpeed->setGeometry(QRect(50, 210, 79, 23));
         lblShow = new QLabel(mainEditorForm);
@@ -121,6 +122,7 @@ public:
         cmbSpeed->setItemText(0, QApplication::translate("mainEditorForm", "5km/hr", nullptr));
         cmbSpeed->setItemText(1, QApplication::translate("mainEditorForm", "60km/hr", nullptr));
         cmbSpeed->setItemText(2, QApplication::translate("mainEditorForm", "120km/hr", nullptr));
+        cmbSpeed->setItemText(3, QApplication::translate("mainEditorForm", "200km/hr", nullptr));
 
         lblShow->setText(QApplication::translate("mainEditorForm", "Hello", nullptr));
         chbPrice->setText(QApplication::translate("mainEditorForm", "Price", nullptr));

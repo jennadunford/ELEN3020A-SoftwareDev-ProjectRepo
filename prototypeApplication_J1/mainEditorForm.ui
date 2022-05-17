@@ -149,6 +149,11 @@
      <string>120km/hr</string>
     </property>
    </item>
+   <item>
+    <property name="text">
+     <string>200km/hr</string>
+    </property>
+   </item>
   </widget>
   <widget class="QLabel" name="lblShow">
    <property name="geometry">
