@@ -40,18 +40,28 @@ public:
         if (mainEditorForm->objectName().isEmpty())
             mainEditorForm->setObjectName(QString::fromUtf8("mainEditorForm"));
         mainEditorForm->resize(911, 791);
+        mainEditorForm->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);\n"
+"color: rgb(255, 255, 255);"));
         label = new QLabel(mainEditorForm);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(50, 50, 181, 16));
+        QFont font;
+        font.setBold(true);
+        font.setWeight(75);
+        label->setFont(font);
+        label->setStyleSheet(QString::fromUtf8("border-color: rgb(255, 255, 255);"));
         label_2 = new QLabel(mainEditorForm);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(50, 120, 181, 16));
+        label_2->setFont(font);
         label_3 = new QLabel(mainEditorForm);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(50, 190, 141, 16));
+        label_3->setFont(font);
         label_4 = new QLabel(mainEditorForm);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setGeometry(QRect(50, 260, 181, 16));
+        label_4->setFont(font);
         cmbTransport = new QComboBox(mainEditorForm);
         cmbTransport->addItem(QString());
         cmbTransport->addItem(QString());
@@ -59,6 +69,7 @@ public:
         cmbTransport->addItem(QString());
         cmbTransport->setObjectName(QString::fromUtf8("cmbTransport"));
         cmbTransport->setGeometry(QRect(50, 70, 79, 23));
+        cmbTransport->setStyleSheet(QString::fromUtf8("background-color: rgb(122, 122, 122);"));
         cmbDistance = new QComboBox(mainEditorForm);
         cmbDistance->addItem(QString());
         cmbDistance->addItem(QString());
@@ -66,6 +77,7 @@ public:
         cmbDistance->addItem(QString());
         cmbDistance->setObjectName(QString::fromUtf8("cmbDistance"));
         cmbDistance->setGeometry(QRect(50, 140, 79, 23));
+        cmbDistance->setStyleSheet(QString::fromUtf8("background-color: rgb(122, 122, 122);"));
         cmbSpeed = new QComboBox(mainEditorForm);
         cmbSpeed->addItem(QString());
         cmbSpeed->addItem(QString());
@@ -73,24 +85,46 @@ public:
         cmbSpeed->addItem(QString());
         cmbSpeed->setObjectName(QString::fromUtf8("cmbSpeed"));
         cmbSpeed->setGeometry(QRect(50, 210, 79, 23));
+        cmbSpeed->setStyleSheet(QString::fromUtf8("background-color: rgb(122, 122, 122);"));
         lblShow = new QLabel(mainEditorForm);
         lblShow->setObjectName(QString::fromUtf8("lblShow"));
-        lblShow->setGeometry(QRect(50, 440, 721, 181));
+        lblShow->setGeometry(QRect(50, 380, 721, 181));
+        lblShow->setStyleSheet(QString::fromUtf8("border-color: rgb(255, 255, 255);"));
+        lblShow->setFrameShape(QFrame::Box);
         lblShow->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
         chbPrice = new QCheckBox(mainEditorForm);
         chbPrice->setObjectName(QString::fromUtf8("chbPrice"));
-        chbPrice->setGeometry(QRect(50, 280, 85, 21));
+        chbPrice->setGeometry(QRect(50, 280, 211, 21));
+        chbPrice->setLayoutDirection(Qt::RightToLeft);
+        chbPrice->setStyleSheet(QString::fromUtf8("background-color: rgb(122, 122, 122);\n"
+"border-radius: 8px;\n"
+"padding: 4px;\n"
+""));
         chbEnergy = new QCheckBox(mainEditorForm);
         chbEnergy->setObjectName(QString::fromUtf8("chbEnergy"));
         chbEnergy->setGeometry(QRect(50, 310, 211, 21));
+        chbEnergy->setLayoutDirection(Qt::RightToLeft);
+        chbEnergy->setStyleSheet(QString::fromUtf8("background-color: rgb(122, 122, 122);\n"
+"border-radius: 8px;\n"
+"padding: 4px;"));
         chbConversions = new QCheckBox(mainEditorForm);
         chbConversions->setObjectName(QString::fromUtf8("chbConversions"));
         chbConversions->setGeometry(QRect(50, 340, 211, 21));
+        chbConversions->setLayoutDirection(Qt::RightToLeft);
+        chbConversions->setStyleSheet(QString::fromUtf8("background-color: rgb(122, 122, 122);\n"
+"border-radius: 8px;\n"
+"padding: 4px;"));
         btnGen = new QPushButton(mainEditorForm);
         btnGen->setObjectName(QString::fromUtf8("btnGen"));
         btnGen->setGeometry(QRect(340, 130, 211, 41));
-        btnGen->setStyleSheet(QString::fromUtf8("\n"
-"font: 11pt \"DejaVu Math TeX Gyre\";"));
+        QFont font1;
+        font1.setPointSize(10);
+        font1.setBold(true);
+        font1.setWeight(75);
+        btnGen->setFont(font1);
+        btnGen->setStyleSheet(QString::fromUtf8("border-radius: 8px;\n"
+"background-color: rgb(21, 232, 99);\n"
+""));
 
         retranslateUi(mainEditorForm);
         QObject::connect(cmbTransport, SIGNAL(activated(QString)), mainEditorForm, SLOT(transportSelect()));

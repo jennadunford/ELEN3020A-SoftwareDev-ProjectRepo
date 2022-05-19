@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>mainEditorForm</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
+  </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -21,6 +25,15 @@
      <width>181</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>Select Transport</string>
@@ -35,6 +48,12 @@
      <height>16</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>Select Distance</string>
    </property>
@@ -44,9 +63,15 @@
     <rect>
      <x>50</x>
      <y>190</y>
-     <width>141</width>
+     <width>181</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>Select Average Speed</string>
@@ -61,6 +86,12 @@
      <height>16</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="text">
     <string>What will you compare?</string>
    </property>
@@ -73,6 +104,9 @@
      <width>79</width>
      <height>23</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(122, 122, 122);</string>
    </property>
    <item>
     <property name="text">
@@ -104,6 +138,9 @@
      <height>23</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(122, 122, 122);</string>
+   </property>
    <item>
     <property name="text">
      <string>5km</string>
@@ -134,6 +171,9 @@
      <height>23</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(122, 122, 122);</string>
+   </property>
    <item>
     <property name="text">
      <string>5km/hr</string>
@@ -159,10 +199,16 @@
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>440</y>
+     <y>380</y>
      <width>721</width>
      <height>181</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
    </property>
    <property name="text">
     <string>Hello</string>
@@ -176,9 +222,18 @@
     <rect>
      <x>50</x>
      <y>280</y>
-     <width>85</width>
+     <width>211</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(122, 122, 122);
+border-radius: 8px;
+padding: 4px;
+</string>
    </property>
    <property name="text">
     <string>Price</string>
@@ -193,6 +248,14 @@
      <height>21</height>
     </rect>
    </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(122, 122, 122);
+border-radius: 8px;
+padding: 4px;</string>
+   </property>
    <property name="text">
     <string>Energy Consumption per km</string>
    </property>
@@ -205,6 +268,14 @@
      <width>211</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(122, 122, 122);
+border-radius: 8px;
+padding: 4px;</string>
    </property>
    <property name="text">
     <string>Energy Conversions</string>
@@ -219,9 +290,17 @@
      <height>41</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="styleSheet">
-    <string notr="true">
-font: 11pt &quot;DejaVu Math TeX Gyre&quot;;</string>
+    <string notr="true">border-radius: 8px;
+background-color: rgb(21, 232, 99);
+</string>
    </property>
    <property name="text">
     <string>Generate Comparison</string>
