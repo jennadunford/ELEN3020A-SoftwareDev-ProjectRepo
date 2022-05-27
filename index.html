@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylesheet.css" />
     <title>Energy Comparison Tool</title>
   </head>
   <body>
@@ -13,11 +14,42 @@
         1. What type of car are they comparing
         2. How old are their tires?
         3. Their average speed
-    -->
-      <div>Choose Your Transport</div>
-      <div>Choose Your Speed</div>
-      <div>Choose Your Distance</div>
-      <div>Generate Comparison</div>
-    </section>
+    --></section>
+
+    <div class="tool_holder">
+      <h2 class="tool_title">Energy Comparison Tool</h2>
+      <label for="transport">Choose your Transport:</label>
+      <select name="transport" id="transport">
+        <option value="toyota">Toyota car</option>
+        <option value="vw">VW car</option>
+        <option value="mercedes">Mercedes car</option>
+        <option value="honda">Honda car</option>
+      </select>
+      <br />
+      <br />
+
+      <label for="tAge">How old are your tires (years):</label>
+      <input type="number" id="tAge" name="tAge" min="1" max="200" />
+      <br />
+      <br />
+
+      <label for="aSpeed">What is your average driving speed (km/hr):</label>
+      <input type="number" id="aSpeed" name="aSpeed" min="1" max="300" />
+      <br />
+      <br />
+      What would you like to compare?
+      <br />
+      <input type="checkbox" id="option1" name="option1" value="price" />
+      <label for="option1"> Compare Price Differences</label><br />
+      <input type="checkbox" id="option2" name="option2" value="consumption" />
+      <label for="option2"> Compare Energy Consumptions</label><br />
+      <input type="checkbox" id="option3" name="option3" value="conversions" />
+      <label for="option3"> Compare Energy Conversions</label><br />
+
+      <br />
+      <br />
+
+      <button>Generate New Comparison</button>
+    </div>
   </body>
 </html>
