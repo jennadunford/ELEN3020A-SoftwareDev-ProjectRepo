@@ -16,6 +16,17 @@
         3. Their average speed
     --></section>
 
+    <!--in order, var assigned for formulae should be:
+
+        toyota  - 0.29
+        vw  - 0.29
+        mercedes  - 0.29
+        honda - 0.29
+        convert - 0.65
+        sport - 0.25
+        mod - 0.23
+        code added: last three options-->
+
     <div class="tool_holder">
       <h2 class="tool_title">Energy Comparison Tool</h2>
       <label for="transport">Choose your Transport:</label>
@@ -24,18 +35,50 @@
         <option value="vw">VW car</option>
         <option value="mercedes">Mercedes car</option>
         <option value="honda">Honda car</option>
+        <option value="convert">Convertible car (with top down)</option>
+        <option value="sport">Sports car</option>
+        <option value="mod">Modern/Average car</option>
       </select>
       <br />
       <br />
 
       <label for="tAge">How old are your tires (years):</label>
-      <input type="number" id="tAge" name="tAge" min="1" max="200" />
+      <!--in order, var assigned for formulae should be:
+        New:  0.013
+        Ave:  0.02
+        Bad:  0.03
+        Worse:  0.3
+
+      code removed here: <input type="number" id="tAge" name="tAge" min="1" max="200" />-->
+      <select name="TireAge" id="tAge">
+        <option value="New">0-1</option>
+        <option value="Ave">2-4</option>
+        <option value="Bad">5-6</option>
+        <option value="Worse">7+</option>
+      </select>
       <br />
       <br />
 
+      <!--in order, degree variable assigned here for formulae should be:
+        noSteep:  0.5
+        averageSteep:  1
+        badSteep:  2
+        maxSteep:  3.4
+      
+      entire sec new-->
       <label for="aSpeed">What is your average driving speed (km/hr):</label>
       <input type="number" id="aSpeed" name="aSpeed" min="1" max="300" />
       <br />
+      <br />
+      <label for="steep">How steep on average were the roads?:</label>
+      <select name="Steepness" id="steep">
+        <option value="noSteep">Flat Roads all the way</option>
+        <option value="averageSteep">Mildly Steep</option>
+        <option value="badSteep">Quite steep</option>
+        <option value="maxSteep">Just drove up the side of a mountain</option>
+      </select>
+      <br />
+
       <br />
       What would you like to compare?
       <br />

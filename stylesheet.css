@@ -8,10 +8,11 @@ div.tool_holder {
   margin: auto;
   background-color: black;
   color: white;
-  padding: 1%;
+  padding: 2%;
   border-radius: 8px;
 }
 
 h2.tool_title {
   text-align: center;
+  text-decoration: underline;
 }
