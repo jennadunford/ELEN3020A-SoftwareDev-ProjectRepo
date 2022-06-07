@@ -1,7 +1,29 @@
-$(document).on("click", "#genButton", function (e) {
-  writeInputToFile();
-});
+//USING A JS LIBRARY
 
+var fso = new FSO(1024 * 1024 * 1024, true); // Create 1GB of temp storage
+
+var fsq = fso.createQueue();
+
+// Queues process commands sequentially,
+// prepare your queue like so:
+fsq.mkdir(
+  "//wsl.localhost/Ubuntu/home/jennadunfordELEN3020A-SoftwareDev-ProjectRepo/JavascriptOutputTesting"
+);
+fsq.write(
+  "//wsl.localhost/Ubuntu/home/jennadunfordELEN3020A-SoftwareDev-ProjectRepo/JavascriptOutputTesting/new.txt",
+  " Jenna wrote to this"
+);
+fsq.read(
+  "//wsl.localhost/Ubuntu/home/jennadunfordELEN3020A-SoftwareDev-ProjectRepo/JavascriptOutputTesting/new.txt",
+  function (data) {
+    console.log(data);
+  }
+);
+
+// Finally, execute asynchronously.
+fsq.execute();
+//END OF JS LIBRARY EXAMPLE
+//This does seem to *work* but the github says it is depreceated should look into other options
 function writeInputToFile() {
   var dataTitle = "User Input";
   var transport = document.getElementById("trSelect");
@@ -43,7 +65,7 @@ function writeInputToFile() {
 
   var outputTF = new Blob([outputString], { type: "text/plain;charset=utf-8" });
   saveAs(outputTF, "output.txt");
-  // fs.writeFileSync("output.txt", outputString);
-
+  //   fs.writeFileSync("output.txt", outputString);
+  //write("output.txt", outputString);
   console.log("text file generated");
 }
