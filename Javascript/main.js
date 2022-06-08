@@ -5,6 +5,7 @@
 // var fsq = fso.createQueue();
 
 // // Queues process commands sequentially,
+// // prepare your queue like so:
 // fsq.mkdir(
 //   "//wsl.localhost/Ubuntu/home/jennadunford/ELEN3020A-SoftwareDev-ProjectRepo/JavascriptOutputTesting"
 // );
