@@ -109,12 +109,16 @@
       document
         .querySelector(".myButton")
         .addEventListener("click", function () {
+          var num1 = document.getElementById("test1");
+          var num2 = document.getElementById("test2");
+
           var result = Module.ccall(
             "addingTwoNumbers", // name of C function
             "number", // return type
             "number", // argument types
-            [5, 2] // arguments
+            [num1.value, num2.value] // arguments
           );
+          alert(result);
           console.log(result);
         });
     </script>
