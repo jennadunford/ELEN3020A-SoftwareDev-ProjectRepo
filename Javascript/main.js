@@ -71,7 +71,6 @@ function writeInputToFile() {
   );
 
   if (speedV.value == 0) {
-    console.log("hello;");
     alert("Please enter a value for speed");
     canGenerate = false;
   }

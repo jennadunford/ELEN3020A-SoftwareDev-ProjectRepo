@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylesheet.css" />
+    <title>Energy Comparison Tool</title>
+  </head>
+  <body>
+    <h1>Energy Comparison Tool</h1>
+    <section>
+      <!-- What do we need from the user?
+        1. What type of car are they comparing
+        2. How old are their tires?
+        3. Their average speed
+    --></section>
+
+    <!--in order, var assigned for formulae should be:
+
+        toyota  - 0.29
+        vw  - 0.29
+        mercedes  - 0.29
+        honda - 0.29
+        convert - 0.65
+        sport - 0.25
+        mod - 0.23
+        code added: last three options-->
+
+    <div class="tool_holder">
+      <h2 class="tool_title">Energy Comparison Tool</h2>
+      <label for="transport">Choose your Transport:</label>
+      <select id="trSelect" name="transport" id="transport">
+        <option id="car1" value="toyota">Toyota car</option>
+        <option id="car2" value="vw">VW car</option>
+        <option id="car3" value="mercedes">Mercedes car</option>
+        <option id="car4" value="honda">Honda car</option>
+        <option id="car5" value="convert">
+          Convertible car (with top down)
+        </option>
+        <option id="car6" value="sport">Sports car</option>
+        <option id="car7" value="mod">Modern/Average car</option>
+      </select>
+      <br />
+      <br />
+
+      <label for="tAge">How old are your tires (years):</label>
+      <!--in order, var assigned for formulae should be:
+        New:  0.013
+        Ave:  0.02
+        Bad:  0.03
+        Worse:  0.3
+
+      code removed here: <input type="number" id="tAge" name="tAge" min="1" max="200" />-->
+      <select id="tiSelect" name="TireAge" id="tAge">
+        <option id="tAge1" value="New">0-1</option>
+        <option id="tAge2" value="Ave">2-4</option>
+        <option id="tAge3" value="Bad">5-6</option>
+        <option id="tAge4" value="Worse">7+</option>
+      </select>
+      <br />
+      <br />
+
+      <!--in order, degree variable assigned here for formulae should be:
+        noSteep:  0.5
+        averageSteep:  1
+        badSteep:  2
+        maxSteep:  3.4
+      
+      entire sec new-->
+      <label for="aSpeed">What is your average driving speed (km/hr):</label>
+      <input type="number" id="aSpeed" name="aSpeed" min="1" max="300" />
+      <br />
+      <br />
+      <label for="steep">How steep on average were the roads?:</label>
+      <select name="Steepness" id="steepSelect">
+        <option id="steep1" value="noSteep">Flat Roads all the way</option>
+        <option id="steep2" value="averageSteep">Mildly Steep</option>
+        <option id="steep3" value="badSteep">Quite steep</option>
+        <option id="steep4" value="maxSteep">
+          Just drove up the side of a mountain
+        </option>
+      </select>
+      <br />
+
+      <br />
+      What would you like to compare?
+      <br />
+      <input type="checkbox" id="option1" name="option1" value="price" />
+      <label for="option1"> Compare Price Differences</label><br />
+      <input type="checkbox" id="option2" name="option2" value="consumption" />
+      <label for="option2"> Compare Energy Consumptions</label><br />
+      <input type="checkbox" id="option3" name="option3" value="conversions" />
+      <label for="option3"> Compare Energy Conversions</label><br />
+
+      <br />
+      <br />
+
+      <button id="genButton">Generate New Comparison</button>
+    </div>
+    <br />
+    <br />
+    <label for="testing1">input a number:</label>
+    <input type="number" id="test1" name="testing1" />
+    <label for="testing2">input a number:</label>
+    <input type="number" id="test2" name="testing2" />
+    <button class="myButton">Test C Code</button>
+    <script type="text/javascript">
+      document
+        .querySelector(".myButton")
+        .addEventListener("click", function () {
+          var result = Module.ccall(
+            "addingTwoNumbers", // name of C function
+            null, // return type
+            null, // argument types
+            null // arguments
+          );
+        });
+    </script>
+  </body>
+  <script
+    type="text/javascript"
+    src="https://code.jquery.com/jquery-1.7.1.min.js"
+  ></script>
+  <script type="text/javascript" src="../Javascript/fso.js"></script>
+  <script type="text/javascript" src="../Javascript/fso.min.js"></script>
+  <script src="../Javascript/FileSaver.js"></script>
+  <script type="text/javascript" src="../Javascript/main.js"></script>
+  <script type="text/javascript" src="3.js"></script>
+</html>
