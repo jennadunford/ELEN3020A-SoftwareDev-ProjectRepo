@@ -1,30 +1,36 @@
-//USING A JS LIBRARY
+// //USING A JS LIBRARY
 
-var fso = new FSO(1024 * 1024 * 1024, true); // Create 1GB of temp storage
+// var fso = new FSO(1024 * 1024 * 1024, true); // Create 1GB of temp storage
 
-var fsq = fso.createQueue();
+// var fsq = fso.createQueue();
 
-// Queues process commands sequentially,
-// prepare your queue like so:
-fsq.mkdir(
-  "//wsl.localhost/Ubuntu/home/jennadunfordELEN3020A-SoftwareDev-ProjectRepo/JavascriptOutputTesting"
-);
-fsq.write(
-  "//wsl.localhost/Ubuntu/home/jennadunfordELEN3020A-SoftwareDev-ProjectRepo/JavascriptOutputTesting/new.txt",
-  " Jenna wrote to this"
-);
-fsq.read(
-  "//wsl.localhost/Ubuntu/home/jennadunfordELEN3020A-SoftwareDev-ProjectRepo/JavascriptOutputTesting/new.txt",
-  function (data) {
-    console.log(data);
-  }
-);
+// // Queues process commands sequentially,
+// fsq.mkdir(
+//   "//wsl.localhost/Ubuntu/home/jennadunford/ELEN3020A-SoftwareDev-ProjectRepo/JavascriptOutputTesting"
+// );
+// fsq.write(
+//   "//wsl.localhost/Ubuntu/home/jennadunford/ELEN3020A-SoftwareDev-ProjectRepo/JavascriptOutputTesting/new.txt",
+//   " Jenna wrote to this"
+// );
+// fsq.read(
+//   "//wsl.localhost/Ubuntu/home/jennadunford/ELEN3020A-SoftwareDev-ProjectRepo/JavascriptOutputTesting/new.txt",
+//   function (data) {
+//     console.log(data);
+//   }
+// );
 
-// Finally, execute asynchronously.
-fsq.execute();
+// // Finally, execute asynchronously.
+// fsq.execute();
 //END OF JS LIBRARY EXAMPLE
 //This does seem to *work* but the github says it is depreceated should look into other options
+
+$(document).on("click", "#genButton", function () {
+  writeInputToFile();
+  // runExternalCFile();
+});
+
 function writeInputToFile() {
+  var canGenerate = true;
   var dataTitle = "User Input";
   var transport = document.getElementById("trSelect");
   var tireAge = document.getElementById("tiSelect");
@@ -63,9 +69,35 @@ function writeInputToFile() {
     option3
   );
 
-  var outputTF = new Blob([outputString], { type: "text/plain;charset=utf-8" });
-  saveAs(outputTF, "output.txt");
-  //   fs.writeFileSync("output.txt", outputString);
-  //write("output.txt", outputString);
-  console.log("text file generated");
+  if (speedV.value == 0) {
+    console.log("hello;");
+    alert("Please enter a value for speed");
+    canGenerate = false;
+  }
+  if (option1 == null && option2 == null && option3 == null) {
+    alert("Please select at least one option for comparison.");
+    canGenerate = false;
+  }
+
+  if (canGenerate) {
+    var outputTF = new Blob([outputString], {
+      type: "text/plain;charset=utf-8",
+    });
+    saveAs(outputTF, "output.txt");
+    //   fs.writeFileSync("output.txt", outputString);
+    //write("output.txt", outputString);
+    console.log("text file generated");
+  }
+}
+
+function runExternalCFile() {
+  WshShell = new ActiveXObject("WScript.Shell");
+  WshShell.Run(
+    "//wsl.localhost/Ubuntu/home/jennadunford/ELEN3020A-SoftwareDev-ProjectRepo/main.cpp",
+    1,
+    false
+  );
+  console.log("Should have written to a new file?");
+  //This does not work, sadley
+  //LOOK INTO WEB ASSEMBLY
 }
