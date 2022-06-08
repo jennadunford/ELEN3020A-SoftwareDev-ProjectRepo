@@ -19,8 +19,8 @@ int main (void)
 extern "C" {
 #endif
 
- EMSCRIPTEN_KEEPALIVE void addingTwoNumbers(){
- cout << "Calling function\n";
+ EMSCRIPTEN_KEEPALIVE int addingTwoNumbers(int a, int b){
+ return (a+b);
  }
 
 #ifdef __cplusplus
