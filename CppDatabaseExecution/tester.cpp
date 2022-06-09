@@ -6,9 +6,9 @@
 #include <resultset.h>
 #include <statement.h>
 
-//#include <emscripten/emscripten.h>
 
 using namespace sql;
+
  void showDatabase(){
   Driver *driver;
   Connection *con;
@@ -34,10 +34,10 @@ using namespace sql;
     std::cout << res->getDouble("Petrol_Usage") << std::endl;
   }
  }
+
+
 int main(void){
     showDatabase();
-
   return 0;
-
 }
 

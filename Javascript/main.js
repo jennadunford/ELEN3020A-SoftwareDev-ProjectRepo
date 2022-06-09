@@ -1,34 +1,29 @@
-// //USING A JS LIBRARY
-
-// var fso = new FSO(1024 * 1024 * 1024, true); // Create 1GB of temp storage
-
-// var fsq = fso.createQueue();
-
-// // Queues process commands sequentially,
-// // prepare your queue like so:
-// fsq.mkdir(
-//   "//wsl.localhost/Ubuntu/home/jennadunford/ELEN3020A-SoftwareDev-ProjectRepo/JavascriptOutputTesting"
-// );
-// fsq.write(
-//   "//wsl.localhost/Ubuntu/home/jennadunford/ELEN3020A-SoftwareDev-ProjectRepo/JavascriptOutputTesting/new.txt",
-//   " Jenna wrote to this"
-// );
-// fsq.read(
-//   "//wsl.localhost/Ubuntu/home/jennadunford/ELEN3020A-SoftwareDev-ProjectRepo/JavascriptOutputTesting/new.txt",
-//   function (data) {
-//     console.log(data);
-//   }
-// );
-
-// // Finally, execute asynchronously.
-// fsq.execute();
-//END OF JS LIBRARY EXAMPLE
-//This does seem to *work* but the github says it is depreceated should look into other options
-
 $(document).on("click", "#genButton", function () {
-  writeInputToFile();
+  getCppValues();
+  //writeInputToFile();
   // runExternalCFile();
 });
+
+function getCppValues() {
+  var transport = document.getElementById("trSelect");
+  var steep = document.getElementById("steepSelect");
+  var tireAge = document.getElementById("tiSelect");
+
+  var petrolUse = getCarPetrolU(transport.value);
+  var carMake = getCarMake(transport.value);
+  var carModel = getCarModel(transport.value);
+  var carClass = getCarClass(transport.value);
+  var steepVariable = getSteepVariable(steep.value);
+  var tireVariable = getTireVariable(tireAge.value);
+
+  console.log(
+    "Petrol usage per 100km:" +
+      petrolUse +
+      "\n" +
+      "Killowatt hour conversion per 100km: " +
+      Module.ccall("sConversionPetrolKWH", "number", "number", [petrolUse])
+  );
+}
 
 function writeInputToFile() {
   var canGenerate = true;
@@ -83,7 +78,7 @@ function writeInputToFile() {
     var outputTF = new Blob([outputString], {
       type: "text/plain;charset=utf-8",
     });
-    saveAs(outputTF, "output.txt");
+    //saveAs(outputTF, "output.txt");
     //   fs.writeFileSync("output.txt", outputString);
     //write("output.txt", outputString);
     console.log("text file generated");
