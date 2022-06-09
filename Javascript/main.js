@@ -26,14 +26,68 @@ function getCppValues() {
       Module.ccall("sConversionPetrolKWH", "number", "number", [petrolUse])
   );
 
+  var kwhHKmPet = Module.ccall("sConversionPetrolKWH", "number", "number", [petrolUse]);
+
+  var kwhHKmEv = 21.499;
+
   console.log(
     "Cost per km for petrol: " +
       Module.ccall("genCostPerKmPetrol", "number", "number", [petrolUse])
   );
+
+  var costKmPet = Module.ccall("genCostPerKmPetrol", "number", "number", [petrolUse]);
+
+  var costLPet = 23.845;
+
+  var costKwhKmEv = 0.286;
+
   console.log(
     "Energy usage per km for petrol: " +
       Module.ccall("genEnergyUsagePeKmPetrol", "number", "number", [petrolUse])
   );
+
+  var enUseKmPet = Module.ccall("genEnergyUsagePeKmPetrol", "number", "number", [petrolUse]);
+
+  var enUseKmEv = 773.982;
+
+  //price graphs
+
+  const priceLabels = ["Petrol Cost Per Km", "KiloWatt Hour Cost per Km"];
+
+  const priceData = {
+    labels: priceLabels, 
+    datasets:[
+      {
+        label: "Cost Comparison between " + carMake + " " + carModel + " and Average Electric Alternative Cost(Petrol vs KiloWatt Hours)",
+        backgroundColor:[
+          "rgb(242, 184, 75)", 
+          "rgb(75, 242, 108)"
+        ],
+        borderColor:[
+          "rgb(242, 184, 75)", 
+          "rgb(75, 242, 108)"
+        ],
+        data:[
+          costKmPet, costKwhKmEv
+        ],
+      },
+    ],
+  };
+
+  const priceConfig = {
+    type: "bar",
+    data: priceData,
+    options:{},
+  };
+
+  const priceChart = new Chart (document.getElementById("priceChart"), priceConfig);
+
+
+
+  //energy consumption graphs
+
+  //energy conversion graphs
+
 }
 
 function writeInputToFile() {
