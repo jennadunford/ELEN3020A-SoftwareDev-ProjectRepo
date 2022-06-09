@@ -1,48 +1,39 @@
 //Put C code here
 #include <iostream>
 #include "comparisons.h"
-#include<SQLAPI.h>  
+#include "EMSC_prototyping/SQL/mysql/SQLAPI.h"
 
 using namespace std;
 
 int main (void)
 {
  // create connection object to connect to database
-    SAConnection con;
-    try
+SAConnection conn;         //initializes a new SAConnection object
+
+    try 
+
     {
-        // connect to database
-        // in this example, it is Oracle,
-        // but can also be Sybase, Informix, DB2
-        // SQLServer, InterBase, SQLBase and ODBC
-        con.Connect ("yn7m0SUz0Y",    // database name
-                     "yn7m0SUz0Y",  // user name
-                     "LWRebclM6g",  // password
-                     SQLServer); //Oracle Client
-        printf("We are connected!\n");
- 
-        // Disconnect is optional
-        // autodisconnect will occur in destructor if needed
-        con.Disconnect();
-        printf("We are disconnected!\n");
-    }
- 
-    catch(SAException &amp; x)
+
+       conn.Connect(("yn7m0SUz0Y"),("yn7m0SUz0Y"),("LWRebclM6g"), SA_MySQL_Client); //method to connection with data source
+
+       cout << "We are connected!\n";
+
+
+       conn.Disconnect();
+
+       cout << "We are disconnected!\n";   
+
+    }   
+
+    catch (SAException& x) 
+
     {
-        // SAConnection::Rollback()
-        // can also throw an exception
-        // (if a network error for example),
-        // we will be ready
-        try
-        {
-            // on error rollback changes
-            con.Rollback ();
-        }
-        catch(SAException &amp;)
-        {
-        }
-        // print error message
-        printf("%s\n", (const char*)x.ErrText());
-    }
+
+        conn.Rollback();
+
+        cout << "\n" << x.ErrText().GetMultiByteChars();   
+
+    }   
+
     return 0;
 }
