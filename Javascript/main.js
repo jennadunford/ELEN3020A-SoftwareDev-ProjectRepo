@@ -90,14 +90,37 @@ function writeInputToFile() {
   }
 }
 
-function runExternalCFile() {
-  WshShell = new ActiveXObject("WScript.Shell");
-  WshShell.Run(
-    "//wsl.localhost/Ubuntu/home/jennadunford/ELEN3020A-SoftwareDev-ProjectRepo/main.cpp",
-    1,
-    false
-  );
-  console.log("Should have written to a new file?");
-  //This does not work, sadley
-  //LOOK INTO WEB ASSEMBLY
-}
+const mysql = require("mysql2");
+
+const connection = mysql.createConnection({
+  host: "remotemysql.com",
+  user: "yn7m0SUz0Y",
+  password: "LWRebclM6g",
+  database: "yn7m0SUz0Y",
+});
+
+connection.query(
+  "SELECT `Make`, `Model` FROM `TransportTypes`",
+  function (err, results, fields) {
+    console.log(err);
+    console.log(results); // results contains rows returned by server
+    console.log(fields); // fields contains extra meta data about results, if available
+  }
+);
+
+/*
+const connection = mysql.createConnection({
+  host: "remotemysql.com",
+  user: "yn7m0SUz0Y",
+  password: "LWRebclM6g",
+  database: "yn7m0SUz0Y",
+});
+
+connection.query(
+  "SELECT `Make`, `Model` FROM `TransportTypes`",
+  function (err, results, fields) {
+    console.log(err);
+    console.log(results); // results contains rows returned by server
+    console.log(fields); // fields contains extra meta data about results, if available
+  }
+);*/
