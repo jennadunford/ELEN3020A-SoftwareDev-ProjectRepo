@@ -1,39 +1,18 @@
-//Put C code here
+#include <stdlib.h>
 #include <iostream>
-#include "comparisons.h"
-#include "EMSC_prototyping/SQL/mysql/SQLAPI.h"
+#include <mysql_connection.h>
+#include <driver.h>
+#include <exception.h>
+#include <resultset.h>
+#include <statement.h>
 
-using namespace std;
+using namespace sql;
+int main(void){
+  sql::Driver *driver;
+  sql::Connection *con;
 
-int main (void)
-{
- // create connection object to connect to database
-SAConnection conn;         //initializes a new SAConnection object
+  driver = get_driver_instance();
+  con = driver->connect("tcp://105.213.169.78","yn7m0SUz0Y","LWRebclM6g");
 
-    try 
-
-    {
-
-       conn.Connect(("yn7m0SUz0Y"),("yn7m0SUz0Y"),("LWRebclM6g"), SA_MySQL_Client); //method to connection with data source
-
-       cout << "We are connected!\n";
-
-
-       conn.Disconnect();
-
-       cout << "We are disconnected!\n";   
-
-    }   
-
-    catch (SAException& x) 
-
-    {
-
-        conn.Rollback();
-
-        cout << "\n" << x.ErrText().GetMultiByteChars();   
-
-    }   
-
-    return 0;
+  return 0;
 }
