@@ -1,3 +1,5 @@
+//const { Module } = require("module");
+
 $(document).on("click", "#genButton", function () {
   getCppValues();
   //writeInputToFile();
@@ -22,6 +24,15 @@ function getCppValues() {
       "\n" +
       "Killowatt hour conversion per 100km: " +
       Module.ccall("sConversionPetrolKWH", "number", "number", [petrolUse])
+  );
+
+  console.log(
+    "Cost per km for petrol: " +
+      Module.ccall("genCostPerKmPetrol", "number", "number", [petrolUse])
+  );
+  console.log(
+    "Energy usage per km for petrol: " +
+      Module.ccall("genEnergyUsagePeKmPetrol", "number", "number", [petrolUse])
   );
 }
 

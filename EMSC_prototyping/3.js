@@ -2181,16 +2181,8 @@ var _genCostPerKmPetrol = (Module["_genCostPerKmPetrol"] =
   createExportWrapper("genCostPerKmPetrol"));
 
 /** @type {function(...*):?} */
-var _genCostPerKmElec = (Module["_genCostPerKmElec"] =
-  createExportWrapper("genCostPerKmElec"));
-
-/** @type {function(...*):?} */
-var _genEnergyUsagePeHrPetrol = (Module["_genEnergyUsagePeHrPetrol"] =
-  createExportWrapper("genEnergyUsagePeHrPetrol"));
-
-/** @type {function(...*):?} */
-var _genEnergyUsagePerHrElec = (Module["_genEnergyUsagePerHrElec"] =
-  createExportWrapper("genEnergyUsagePerHrElec"));
+var _genEnergyUsagePeKmPetrol = (Module["_genEnergyUsagePeKmPetrol"] =
+  createExportWrapper("genEnergyUsagePeKmPetrol"));
 
 /** @type {function(...*):?} */
 var _sConversionPetrolKWH = (Module["_sConversionPetrolKWH"] =
