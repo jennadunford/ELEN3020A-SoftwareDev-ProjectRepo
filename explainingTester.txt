@@ -1,0 +1,11 @@
+Prerequisites for tester.cpp to work:
+
+This deb package: (libmysqlcppconn9_8.0.29-1ubuntu20.04_amd64.deb)
+sudo apt install libmysqlcppconn-dev library
+
+The command to compile it so that it works:  sudo g++ -Wall -I/usr/include/cppconn -o testapp tester.cpp -L/usr/lib -lmysqlcppconn
+
+and then:
+./testapp to run the executable
+
+We still need to figure out how to get this to happen automatically
