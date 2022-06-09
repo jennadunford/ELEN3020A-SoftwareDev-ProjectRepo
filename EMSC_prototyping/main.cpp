@@ -24,30 +24,36 @@ extern "C" {
  return (a+b);
  }
 
-  EMSCRIPTEN_KEEPALIVE int genCostPerKmPetrol(){
-    return 0;
+  EMSCRIPTEN_KEEPALIVE float genCostPerKmPetrol(float consumptionVal){
+    float petrolCost = 23.845;
+    float costPerKm = ((consumptionVal)*(petrolCost))/100;
+    return costPerKm;
   }
 
-    EMSCRIPTEN_KEEPALIVE int genCostPerKmElec(){
+    /*EMSCRIPTEN_KEEPALIVE int genCostPerKmElec(){
       return 0;
+    }*///This function is not needed, the value is constant
+
+    EMSCRIPTEN_KEEPALIVE float genEnergyUsagePeKmPetrol(float consumptionVal){
+      float fkWhConst = 8.902598;
+      float fConvert;
+      fConvert = consumptionVal * fkWhConst; // l/100km to kWh/100km
+      float kJPerKm = 3600*((fConvert)/100);
+      return kJPerKm;
     }
 
-    EMSCRIPTEN_KEEPALIVE int genEnergyUsagePeHrPetrol(){
+    /*EMSCRIPTEN_KEEPALIVE float genEnergyUsagePerKmElec(){
       return 0;
-    }
-
-    EMSCRIPTEN_KEEPALIVE float genEnergyUsagePerHrElec(){
-      return 0;
-    }
+    }*///this value will be constant so a function is not needed
 
 
-  EMSCRIPTEN_KEEPALIVE float sConversionPetrolKWH(float fuel){
+  EMSCRIPTEN_KEEPALIVE float sConversionPetrolKWH(float consumptionVal){
       //string carType will be fed into a database which gives us fuel consumption in litres per 100km
      //fuel consumption in litres per 100km
           float fkWhConst = 8.902598;
           float fConvert;
 
-          fConvert = fuel * fkWhConst; // l/100km to kWh/100km
+          fConvert = consumptionVal * fkWhConst; // l/100km to kWh/100km
               
               float wh = 0; //energy consumption in watt-hour per km
               float fKWh = 0;
