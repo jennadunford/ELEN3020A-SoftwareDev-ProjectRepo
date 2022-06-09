@@ -50,6 +50,9 @@ function getCppValues() {
 
   var enUseKmEv = 773.982;
 
+ // Chart.defaults.global.defaultFontColor = 'white';
+
+
   //price graphs
 
   const priceLabels = ["Petrol Cost Per Km", "KiloWatt Hour Cost per Km"];
@@ -142,9 +145,15 @@ function getCppValues() {
     type: "bar",
     data: eConverData,
     options:{},
+    legend: {
+    labels: {
+      fontColor: 'white'
+  }
+},
   };
 
   const eConverChart = new Chart (document.getElementById("eConverChart"), eConverConfig);
+
 
   //energy consumption graphs
 
