@@ -8,15 +8,15 @@ $(document).on("click", "#genButton", function () {
 
 function getCppValues() {
   var transport = document.getElementById("trSelect");
-  var steep = document.getElementById("steepSelect");
-  var tireAge = document.getElementById("tiSelect");
+  //var steep = document.getElementById("steepSelect");
+  // var tireAge = document.getElementById("tiSelect");
 
   var petrolUse = getCarPetrolU(transport.value);
   var carMake = getCarMake(transport.value);
   var carModel = getCarModel(transport.value);
-  var carClass = getCarClass(transport.value);
-  var steepVariable = getSteepVariable(steep.value);
-  var tireVariable = getTireVariable(tireAge.value);
+  //var carClass = getCarClass(transport.value);
+  //var steepVariable = getSteepVariable(steep.value);
+  // var tireVariable = getTireVariable(tireAge.value);
 
   console.log(
     "Petrol usage per 100km:" +

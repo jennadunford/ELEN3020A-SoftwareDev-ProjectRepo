@@ -10,24 +10,11 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
-    <h1>Energy Comparison Tool</h1>
-    <section>
-      <!-- What do we need from the user?
-        1. What type of car are they comparing
-        2. How old are their tires?
-        3. Their average speed
-    --></section>
-
-    <!--in order, var assigned for formulae should be:
-
-        toyota  - 0.29
-        vw  - 0.29
-        mercedes  - 0.29
-        honda - 0.29
-        convert - 0.65
-        sport - 0.25
-        mod - 0.23
-        code added: last three options-->
+    <h1>
+      Compare The Enery Usage of Your Vehicle Against the Average Electric
+      Alternative
+    </h1>
+    <section></section>
 
     <div class="tool_holder">
       <h2 class="tool_title">Energy Comparison Tool</h2>
@@ -42,44 +29,7 @@
       <br />
       <br />
 
-      <label for="tAge">How old are your tires (years):</label>
-      <!--in order, var assigned for formulae should be:
-        New:  0.013
-        Ave:  0.02
-        Bad:  0.03
-        Worse:  0.3
-
-      code removed here: <input type="number" id="tAge" name="tAge" min="1" max="200" />-->
-      <select id="tiSelect" name="TireAge" id="tAge">
-        <option id="tAge1" value="tire1">0-1</option>
-        <option id="tAge2" value="tire2">2-4</option>
-        <option id="tAge3" value="tire3">5-6</option>
-        <option id="tAge4" value="tire4">7+</option>
-      </select>
-      <br />
-      <br />
-
-      <!--in order, degree variable assigned here for formulae should be:
-        noSteep:  0.5
-        averageSteep:  1
-        badSteep:  2
-        maxSteep:  3.4
-      
-      entire sec new-->
-      <label for="aSpeed">What is your average driving speed (km/hr):</label>
-      <input type="number" id="aSpeed" name="aSpeed" min="1" max="300" />
-      <br />
-      <br />
-      <label for="steep">How steep on average were the roads?:</label>
-      <select name="Steepness" id="steepSelect">
-        <option id="steep1" value="steep1">Flat roads</option>
-        <option id="steep2" value="steep2">Mildly steep</option>
-        <option id="steep3" value="steep3">Quite steep</option>
-        <option id="steep4" value="steep4">Extremely steep</option>
-      </select>
-      <br />
-
-      <br />
+      <!-- <br />
       What would you like to compare?
       <br />
       <input type="checkbox" id="option1" name="option1" value="price" />
@@ -87,11 +37,15 @@
       <input type="checkbox" id="option2" name="option2" value="consumption" />
       <label for="option2"> Compare Energy Consumptions</label><br />
       <input type="checkbox" id="option3" name="option3" value="conversions" />
-      <label for="option3"> Compare Energy Conversions</label><br />
-
-      <br />
-      <br />
-
+      <label for="option3"> Compare Energy Conversions</label><br /> -->
+      <div>
+        Comparisons that will be generated:
+        <ul>
+          <li>Price Comparisons</li>
+          <li>Energy Consumption Comparisons</li>
+          <li>Energy Conversion Comparisons</li>
+        </ul>
+      </div>
       <button id="genButton">Generate New Comparison</button>
     </div>
     <ul class="showBoxes text">
