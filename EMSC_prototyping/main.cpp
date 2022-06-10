@@ -61,7 +61,7 @@ extern "C" {
 
           fKWh =  wh * fKWhconst; //  wh/km to kWh/100km
           
-      return round(fConvert);
+      return fConvert;
     }
 
 
