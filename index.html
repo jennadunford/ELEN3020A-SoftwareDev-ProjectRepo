@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="stylesheet.css" />
     <title>Energy Comparison Tool</title>
+    <script type="text/javascript" src="db.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <h1>Energy Comparison Tool</h1>
@@ -31,15 +33,11 @@
       <h2 class="tool_title">Energy Comparison Tool</h2>
       <label for="transport">Choose your Transport:</label>
       <select id="trSelect" name="transport" id="transport">
-        <option id="car1" value="toyota">Toyota car</option>
-        <option id="car2" value="vw">VW car</option>
-        <option id="car3" value="mercedes">Mercedes car</option>
-        <option id="car4" value="honda">Honda car</option>
-        <option id="car5" value="convert">
-          Convertible car (with top down)
-        </option>
-        <option id="car6" value="sport">Sports car</option>
-        <option id="car7" value="mod">Modern/Average car</option>
+        <option id="car1" value="car1">Honda Accord</option>
+        <option id="car2" value="car2">Kia Forte(MPI)</option>
+        <option id="car3" value="car3">Mazda CX-3</option>
+        <option id="car4" value="car4">Toyota Prius V</option>
+        <option id="car5" value="car5">Mini Cooper 5 Door</option>
       </select>
       <br />
       <br />
@@ -53,10 +51,10 @@
 
       code removed here: <input type="number" id="tAge" name="tAge" min="1" max="200" />-->
       <select id="tiSelect" name="TireAge" id="tAge">
-        <option id="tAge1" value="New">0-1</option>
-        <option id="tAge2" value="Ave">2-4</option>
-        <option id="tAge3" value="Bad">5-6</option>
-        <option id="tAge4" value="Worse">7+</option>
+        <option id="tAge1" value="tire1">0-1</option>
+        <option id="tAge2" value="tire2">2-4</option>
+        <option id="tAge3" value="tire3">5-6</option>
+        <option id="tAge4" value="tire4">7+</option>
       </select>
       <br />
       <br />
@@ -74,12 +72,10 @@
       <br />
       <label for="steep">How steep on average were the roads?:</label>
       <select name="Steepness" id="steepSelect">
-        <option id="steep1" value="noSteep">Flat Roads all the way</option>
-        <option id="steep2" value="averageSteep">Mildly Steep</option>
-        <option id="steep3" value="badSteep">Quite steep</option>
-        <option id="steep4" value="maxSteep">
-          Just drove up the side of a mountain
-        </option>
+        <option id="steep1" value="steep1">Flat roads</option>
+        <option id="steep2" value="steep2">Mildly steep</option>
+        <option id="steep3" value="steep3">Quite steep</option>
+        <option id="steep4" value="steep4">Extremely steep</option>
       </select>
       <br />
 
@@ -98,16 +94,111 @@
 
       <button id="genButton">Generate New Comparison</button>
     </div>
+    <ul class="showBoxes text">
+      <li class="showBox">
+        Price Comparisons (in ZAR)
+        <div class="chartDiv">
+          <canvas id="priceChart"></canvas>
+        </div>
+        <div class="petrolTextDiv">
+          <div>Price of Petrol per Litre: R23.485</div>
+          <div>Price of Electricity per (kiloWatt Hour): R1.33</div>
+        </div>
+      </li>
+      <li class="showBox">
+        Energy Consumpsions (in kilojoules)
+        <div class="chartDiv"><canvas id="eConsumpChart"></canvas></div>
+        <div>
+          Petrol Consumed per 100km:
+          <div id="petrolValue"></div>
+        </div>
+        <div>
+          KiloWatt Hour Consumed per 100km:
+          <div id="kwHValue"></div>
+        </div>
+      </li>
+      <li class="showBox">
+        Energy Conversions (in kiloWatt Hours)
+        <div class="chartDiv"><canvas id="eConverChart"></canvas></div>
+        <div id="vehicleName"></div>
+        <div>
+          generates more kwH of electricity over a hundred kilometers compared
+          to how much the average electrical vehicle uses over a hundred
+          kilometers.
+        </div>
+      </li>
+    </ul>
   </body>
+
+  <!-- <script>
+    const labels = ["January", "February", "March", "April", "May", "June"];
+
+    const data = {
+      labels: labels,
+      datasets: [
+        {
+          label: "My First dataset",
+          backgroundColor: "rgb(255, 99, 132)",
+          borderColor: "rgb(255, 99, 132)",
+          data: [0, 10, 5, 2, 20, 30, 45],
+        },
+        {
+          label: "My Second dataset",
+          backgroundColor: "rgb(144, 238, 144)",
+          borderColor: "rgb(255, 99, 132)",
+          data: [20, 32, 8, 48, 1, 39, 4],
+        },
+      ],
+    };
+
+    const config = {
+      type: "bar",
+      data: data,
+      options: {},
+    };
+  </script>
+  <script>
+    const labels1 = ["Red", "Blue", "Yellow"];
+
+    const data1 = {
+      labels: labels1,
+      datasets: [
+        {
+          label: "My First dataset",
+          backgroundColor: [
+            "rgb(255, 99, 132)",
+            "rgb(54, 162, 235)",
+            "rgb(255, 205, 86)",
+          ],
+          borderColor: [
+            "rgb(255, 99, 132)",
+            "rgb(54, 162, 235)",
+            "rgb(255, 205, 86)",
+          ],
+          data: [70, 98, 300],
+        },
+      ],
+    };
+
+    const config1 = {
+      type: "pie",
+      data: data1,
+      options: {},
+    };
+  </script>
+  <script>
+    const myChart = new Chart(document.getElementById("myChart"), config);
+    const myChart2 = new Chart(document.getElementById("myChart2"), config);
+    const myChart3 = new Chart(document.getElementById("myChart3"), config);
+    const myChart4 = new Chart(document.getElementById("myChart4"), config1);
+  </script> -->
   <script
     type="text/javascript"
     src="https://code.jquery.com/jquery-1.7.1.min.js"
   ></script>
-  <script type="text/javacscript" src="Javascript/fso.js"></script>
-  <script type="text/javascript" src="Javascript/fso.min.js"></script>
-  <script src="Javascript/FileSaver.js"></script>
-  <script data-main="main2" src="Javascript/require.js"></script>
-  <!-- <script type="text/javascript" src="../node_modules/mysql2"></script> -->
-  <!-- <script type="text/javascript" src="Javascript/require.js"></script> -->
-  <script type="text/javascript" src="Javascript/main.js"></script>
+  <script type="text/javascript" src="../Javascript/fso.js"></script>
+  <script type="text/javascript" src="../Javascript/fso.min.js"></script>
+  <script src="../Javascript/FileSaver.js"></script>
+  <script type="text/javascript" src="../Javascript/main.js"></script>
+  <script type="text/javascript" src="3.js"></script>
 </html>
