@@ -57,18 +57,18 @@
           <canvas id="priceChart"></canvas>
         </div>
         <div class="petrolTextDiv">
-          <div>Price of Petrol per Litre: R23.485</div>
-          <div>Price of Electricity per (kiloWatt Hour): R1.33</div>
+          <div id="petrolV">Price of Petrol per Litre: R23.485</div>
+          <div id="electricV">Price of Electricity per (kiloWatt Hour): R1.33</div>
         </div>
       </li>
       <li class="showBox">
         Energy Consumpsions (in kilojoules)
         <div class="chartDiv"><canvas id="eConsumpChart"></canvas></div>
-        <div>
+        <div id="petrolV">
           Petrol Consumed per 100km:
           <div id="petrolValue"></div>
         </div>
-        <div>
+        <div id="electricV">
           KiloWatt Hour Consumed per 100km:
           <div id="kwHValue"></div>
         </div>
@@ -77,7 +77,7 @@
         Energy Conversions (in kiloWatt Hours)
         <div class="chartDiv"><canvas id="eConverChart"></canvas></div>
         <div id="vehicleName"></div>
-        <div>
+        <div id="petrolV" class="textDesc">
           generates more kwH of electricity over a hundred kilometers compared
           to how much the average electrical vehicle uses over a hundred
           kilometers.
