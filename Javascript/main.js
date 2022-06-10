@@ -1,5 +1,9 @@
 //const { Module } = require("module");
+//makeAnimatedGraph();
 
+$(document).on("click", "#reloadButton", function () {
+  location.reload();
+});
 $(document).on("click", "#genButton", function () {
   getCppValues();
   //writeInputToFile();
@@ -261,4 +265,52 @@ function writeInputToFile() {
     //write("output.txt", outputString);
     console.log("text file generated");
   }
+}
+
+function makeAnimatedGraph() {
+  const animateData = {
+    datasets: [
+      {
+        backgroundColor: ["rgb(237, 97, 146)"],
+        borderColor: ["rgb(237, 97, 146)"],
+        data: 5,
+      },
+      {
+        backgroundColor: ["rgb(119, 207, 105)"],
+        borderColor: ["rgb(119, 207, 105)"],
+        data: 3,
+      },
+      {
+        backgroundColor: ["rgb(143, 113, 209)"],
+        borderColor: ["rgb(143, 113, 209)"],
+        data: 8,
+      },
+      {
+        backgroundColor: ["rgb(237, 97, 146)"],
+        borderColor: ["rgb(237, 97, 146)"],
+        data: 6,
+      },
+    ],
+    options: {
+      animations: {
+        tension: {
+          duration: 50,
+          easing: "easeInElastic",
+          from: 1,
+          to: 10,
+          loop: true,
+        },
+      },
+    },
+  };
+
+  const animateConfig = {
+    type: "bar",
+    data: animateData,
+  };
+
+  const animateChart = new Chart(
+    document.getElementById("animateChart"),
+    animateConfig
+  );
 }
