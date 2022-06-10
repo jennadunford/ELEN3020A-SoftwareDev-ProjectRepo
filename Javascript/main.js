@@ -6,21 +6,14 @@ $(document).on("click", "#reloadButton", function () {
 });
 $(document).on("click", "#genButton", function () {
   getCppValues();
-  //writeInputToFile();
-  // runExternalCFile();
 });
 
 function getCppValues() {
   var transport = document.getElementById("trSelect");
-  //var steep = document.getElementById("steepSelect");
-  // var tireAge = document.getElementById("tiSelect");
 
   var petrolUse = getCarPetrolU(transport.value);
   var carMake = getCarMake(transport.value);
   var carModel = getCarModel(transport.value);
-  //var carClass = getCarClass(transport.value);
-  //var steepVariable = getSteepVariable(steep.value);
-  // var tireVariable = getTireVariable(tireAge.value);
 
   console.log(
     "Petrol usage per 100km:" +
@@ -71,7 +64,6 @@ function getCppValues() {
   Chart.defaults.plugins.legend.position = "bottom";
   Chart.defaults.plugins.legend.align = "start";
   Chart.defaults.plugins.legend.textDirection = "rtl";
-  // Chart.defaults.plugins.legend.fullSize = false;
 
   Chart.defaults.font.size = 14;
 
@@ -102,14 +94,14 @@ function getCppValues() {
     priceLabel2,
     datasets: [
       {
-        label: [carMake + " " + carModel + " Petrol Cost per 100km R"],
+        label: [carMake + " " + carModel + " Petrol Cost per 1km"],
         fill: false,
         backgroundColor: ["rgb(242, 184, 75)"],
         borderColor: ["rgb(242, 184, 75)"],
         data: [costKmPet],
       },
       {
-        label: ["Average Electric vehicle cost per 100km R"],
+        label: ["Average Electric vehicle cost per 1km"],
         fill: false,
         backgroundColor: ["rgb(75, 242, 108)"],
         borderColor: ["rgb(75, 242, 108)"],
