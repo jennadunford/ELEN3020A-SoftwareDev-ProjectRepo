@@ -26,7 +26,9 @@ function getCppValues() {
       Module.ccall("sConversionPetrolKWH", "number", "number", [petrolUse])
   );
 
-  var kwhHKmPet = Module.ccall("sConversionPetrolKWH", "number", "number", [petrolUse]);
+  var kwhHKmPet = Module.ccall("sConversionPetrolKWH", "number", "number", [
+    petrolUse,
+  ]);
 
   var kwhHKmEv = 21.499;
 
@@ -35,7 +37,9 @@ function getCppValues() {
       Module.ccall("genCostPerKmPetrol", "number", "number", [petrolUse])
   );
 
-  var costKmPet = Module.ccall("genCostPerKmPetrol", "number", "number", [petrolUse]);
+  var costKmPet = Module.ccall("genCostPerKmPetrol", "number", "number", [
+    petrolUse,
+  ]);
 
   var costLPet = 23.845;
 
@@ -46,38 +50,66 @@ function getCppValues() {
       Module.ccall("genEnergyUsagePeKmPetrol", "number", "number", [petrolUse])
   );
 
-  var enUseKmPet = Module.ccall("genEnergyUsagePeKmPetrol", "number", "number", [petrolUse]);
+  var enUseKmPet = Module.ccall(
+    "genEnergyUsagePeKmPetrol",
+    "number",
+    "number",
+    [petrolUse]
+  );
 
   var enUseKmEv = 773.982;
 
- // Chart.defaults.global.defaultFontColor = 'white';
+  var carText = document.getElementById("vehicleName");
+  carText.textContent = "The" + "\xa0" + carMake + "\xa0" + carModel;
 
+  Chart.defaults.color = "#fff";
+
+  Chart.defaults.plugins.legend.position = "bottom";
+  Chart.defaults.plugins.legend.align = "start";
+  Chart.defaults.plugins.legend.textDirection = "rtl";
+  // Chart.defaults.plugins.legend.fullSize = false;
+
+  Chart.defaults.font.size = 14;
 
   //price graphs
 
-  const priceLabels = ["Petrol Cost Per Km", "KiloWatt Hour Cost per Km"];
+  const priceLabel1 = ["Petrol Cost Per Km VS KiloWatt Hour Cost per km"];
+  const priceLabel2 = ["KiloWatt Hour Cost per Km"];
 
-  const eConsumpLabels = [carMake + " " + carModel, "Average Electric Vehicle"];
+  const eConsumpLabel1 = [
+    "Energy Consumption of " +
+      carMake +
+      " " +
+      carModel +
+      " VS Average Electric Vehicle",
+  ];
+  const eConsumpLabel2 = ["Average Electric Vehicle"];
 
-  const eConverLabels = [carMake + " " + carModel, "Average Electric Vehicle"]
-
+  const eConverLabel1 = [
+    carMake +
+      " " +
+      carModel +
+      " kWH used over 100km VS Average Electric Vehicle ",
+  ];
+  const eConverLabel2 = ["Average Electric Vehicle"];
 
   const priceData = {
-    labels: priceLabels, 
-    datasets:[
+    labels: priceLabel1,
+    priceLabel2,
+    datasets: [
       {
-        label: "Cost Comparison between " + carMake + " " + carModel + " and Average Electric Alternative Cost(Petrol vs KiloWatt Hours)",
-        backgroundColor:[
-          "rgb(242, 184, 75)", 
-          "rgb(75, 242, 108)"
-        ],
-        borderColor:[
-          "rgb(242, 184, 75)", 
-          "rgb(75, 242, 108)"
-        ],
-        data:[
-          costKmPet, costKwhKmEv
-        ],
+        label: [carMake + " " + carModel + " Petrol Cost per 100km R"],
+        fill: false,
+        backgroundColor: ["rgb(242, 184, 75)"],
+        borderColor: ["rgb(242, 184, 75)"],
+        data: [costKmPet],
+      },
+      {
+        label: ["Average Electric vehicle cost per 100km R"],
+        fill: false,
+        backgroundColor: ["rgb(75, 242, 108)"],
+        borderColor: ["rgb(75, 242, 108)"],
+        data: [costKwhKmEv],
       },
     ],
   };
@@ -85,80 +117,90 @@ function getCppValues() {
   const priceConfig = {
     type: "bar",
     data: priceData,
-    options:{},
   };
-  
-  const priceChart = new Chart (document.getElementById("priceChart"), priceConfig);
 
+  const priceChart = new Chart(
+    document.getElementById("priceChart"),
+    priceConfig
+  );
 
   const eConsumpData = {
-    labels: eConsumpLabels, 
-    datasets:[
+    labels: eConsumpLabel1,
+    eConsumpLabel2,
+    datasets: [
       {
-        label: "Energy Usage Comparison Between " + carMake + " " + carModel + " and Average Electric Alternative (in kilojoules)",
-        backgroundColor:[
-          "rgb(242, 184, 75)", 
-          "rgb(75, 242, 108)"
-        ],
-        borderColor:[
-          "rgb(242, 184, 75)", 
-          "rgb(75, 242, 108)"
-        ],
-        data:[
-          enUseKmPet, enUseKmEv
-        ],
+        label: ["Energy Usage: " + carMake + " " + carModel],
+        backgroundColor: ["rgb(242, 184, 75)"],
+        borderColor: ["rgb(242, 184, 75)"],
+        data: [enUseKmPet],
+      },
+      {
+        label: ["Energy Usage: Average Electric Alternative"],
+        backgroundColor: ["rgb(75, 242, 108)"],
+        borderColor: ["rgb(75, 242, 108)"],
+        data: [enUseKmEv],
       },
     ],
   };
-
 
   const eConsumpConfig = {
     type: "bar",
     data: eConsumpData,
-    options:{},
   };
 
-  const eConsumpChart = new Chart (document.getElementById("eConsumpChart"), eConsumpConfig);
+  const eConsumpChart = new Chart(
+    document.getElementById("eConsumpChart"),
+    eConsumpConfig
+  );
 
   const eConverData = {
-    labels: eConverLabels, 
-    datasets:[
+    labels: eConverLabel1,
+    eConverLabel2,
+    datasets: [
       {
-        label: "Kilowatt Hours generated by " + carMake + " " + carModel + " and  used by Average Electric Alternative",
-        backgroundColor:[
-          "rgb(242, 184, 75)", 
-          "rgb(75, 242, 108)"
-        ],
-        borderColor:[
-          "rgb(242, 184, 75)", 
-          "rgb(75, 242, 108)"
-        ],
-        data:[
-          kwhHKmPet, kwhHKmEv
-        ],
+        label: [carMake + " " + carModel + " generated kWH"],
+        backgroundColor: ["rgb(242, 184, 75)"],
+        borderColor: ["rgb(242, 184, 75)"],
+        data: [kwhHKmPet],
+      },
+      {
+        label: ["Average Electric Alternative kWH used"],
+        backgroundColor: ["rgb(75, 242, 108)"],
+        borderColor: ["rgb(75, 242, 108)"],
+        data: [kwhHKmEv],
       },
     ],
   };
 
-
   const eConverConfig = {
     type: "bar",
     data: eConverData,
-    options:{},
-    legend: {
-    labels: {
-      fontColor: 'white'
-  }
-},
   };
 
-  const eConverChart = new Chart (document.getElementById("eConverChart"), eConverConfig);
+  const eConverChart = new Chart(
+    document.getElementById("eConverChart"),
+    eConverConfig
+  );
 
+  // eConverChart.defaults.global.defaultFontColor = "#fff";
+
+  //eConverChart.defaults.global.defaultFontColor = "rgb(251,72,196)";
+  //eConverData.defaults.font.size = 50;
 
   //energy consumption graphs
 
   //energy conversion graphs
 
+  let text = document.getElementsByClassName("text");
+  for (var i = 0; i < text.length; i++) {
+    text[i].classList.add("fade-in");
+  }
+
+  var petrolText = document.getElementById("petrolValue");
+  petrolText.innerHTML = petrolUse + "L";
+  var kwhText = document.getElementById("kwHValue");
+  kwhText.innerHTML = kwhHKmEv;
+  console.log(carMake);
 }
 
 function writeInputToFile() {

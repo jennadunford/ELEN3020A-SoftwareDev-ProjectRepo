@@ -94,24 +94,38 @@
 
       <button id="genButton">Generate New Comparison</button>
     </div>
-    <ul class="showBoxes">
+    <ul class="showBoxes text">
       <li class="showBox">
-        Price Comparisons
-        <div>
+        Price Comparisons (in ZAR)
+        <div class="chartDiv">
           <canvas id="priceChart"></canvas>
         </div>
-        <div>Price of Petrol per Litre:</div>
-        <div>Price of Electricity per (kiloWatt Hour):</div>
+        <div class="petrolTextDiv">
+          <div>Price of Petrol per Litre: R23.485</div>
+          <div>Price of Electricity per (kiloWatt Hour): R1.33</div>
+        </div>
       </li>
       <li class="showBox">
-        Energy Consumpsions
-        <div><canvas id="eConsumpChart"></canvas></div>
-        <div>Petrol Consumed per 100km:</div>
-        <div>KiloWatt Hour Consumed per 100km:</div>
+        Energy Consumpsions (in kilojoules)
+        <div class="chartDiv"><canvas id="eConsumpChart"></canvas></div>
+        <div>
+          Petrol Consumed per 100km:
+          <div id="petrolValue"></div>
+        </div>
+        <div>
+          KiloWatt Hour Consumed per 100km:
+          <div id="kwHValue"></div>
+        </div>
       </li>
       <li class="showBox">
-        Energy Conversions
-        <div><canvas id="eConverChart"></canvas></div>
+        Energy Conversions (in kiloWatt Hours)
+        <div class="chartDiv"><canvas id="eConverChart"></canvas></div>
+        <div id="vehicleName"></div>
+        <div>
+          generates more kwH of electricity over a hundred kilometers compared
+          to how much the average electrical vehicle uses over a hundred
+          kilometers.
+        </div>
       </li>
     </ul>
   </body>
